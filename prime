@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,fact,j,count=0;
+    cout<<"Enter the Number";
+    cin>>n;
+    cout<<"Prime Numbers are"<<" ";
+    for(i=1; i<=n; i++)
+    {
+        fact=0;
+        for(j=1; j<=n; j++)
+        {
+            if(i%j==0)
+                fact++;
+        }
+        if(fact==2)
+            count++;
+    }
+    int arr[count];
+    int x=0;
+    for(i=1; i<=n; i++)
+    {
+        fact=0;
+        for(j=1; j<=n; j++)
+        {
+            if(i%j==0)
+                fact++;
+        }
+        if(fact==2)
+        {
+            arr[x]=i;
+            x++;
+        }
+    }
+    for(i=0;i<count;i++)
+    {
+        int static sum=0;
+        for(j=i+1;j<count;j++)
+        {
+        if(arr[i]+arr[j]==n)
+        {
+        cout<<arr[i]<<" "<<arr[j]<<endl;
+        }
+        }
+    }
+    
+}
